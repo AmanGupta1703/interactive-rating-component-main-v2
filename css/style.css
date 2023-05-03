@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--white: hsl(0, 0%, 100%);
+	/* grey */
+	--light-grey: hsl(217, 12%, 63%);
+	--medium-grey: hsl(216, 12%, 54%);
+	/* blue */
+	--dark-blue: hsl(213, 19%, 18%);
+	--very-dark-blue: hsl(216, 12%, 8%);
+	/* orange */
+	--orange: hsl(25, 97%, 53%);
+
+	/* font weight */
+	--fw-400: 400;
+	--fw-700: 700;
+
+	/* font family */
+	--ff-primary: "Overpass", sans-serif;
+
+	/* font sizes */
+	--fs-15: 0.94rem;
+	--ff-base: 1rem;
+}
+
+body {
+	color: var(--light-grey);
+	background: var(--very-dark-blue);
+	font-family: var(--ff-primary);
+	font-size: var(--fs-base);
+	font-weight: var(--fw-400);
+	min-height: 100vh;
+	line-height: 1.5;
+
+	display: grid;
+	align-content: center;
+}
+
+/* main */
+.main-section {
+	margin: 0 1rem;
+}
+
+.card {
+	background-image: linear-gradient(
+		to bottom,
+		var(--dark-blue),
+		var(--very-dark-blue)
+	);
+	box-shadow: 0 1px 1px 4px var(--white);
+	border-radius: 1rem;
+	display: grid;
+	grid-gap: 1rem;
+	padding: 1.5rem;
+}
+
+.card__img {
+	display: inline-block;
+	border-radius: 100%;
+	background: hsl(217, 12%, 63%, 0.2);
+	padding: 0.5em;
+}
+
+.card__body {
+	display: grid;
+	grid-gap: 1.2em;
+}
+
+.card__title {
+	color: var(--white);
+}
+
+.card__desc {
+	color: var(--light-grey);
+	font-size: var(--fs-15);
+}
+
+.card__button--container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 0.5rem;
+}
+
+.btn {
+	cursor: pointer;
+	border: none;
+	padding: 0.5em;
+}
+
+.card__rate--btn {
+	color: var(--medium-grey);
+	border-radius: 1rem;
+	background: var(--dark-blue);
+}
+
+.card__rate--btn--active {
+	color: var(--white);
+	background: var(--orange);
+}
+
+.card__rate--btn--hover {
+	color: var(--white);
+	background: var(--light-grey);
+}
+
+.card__submit--btn {
+	cursor: pointer;
+	color: var(--white);
+	border: 1px solid var(--orange);
+	border-radius: 100px;
+	background: var(--orange);
+	font-weight: var(--fw-700);
+	font-family: inherit;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 0.6rem;
+}
+
+.card__submit--btn--hover {
+	color: var(--orange);
+	background-color: var(--white);
+}
+
+/* thnak you card */
+
+.main__card--thank-you {
+	text-align: center;
+	justify-items: center;
+}
+
+.main__card--thank-you .card__title {
+	color: var(--orange);
+	background: var(--dark-blue);
+	border-radius: 100px;
+	display: inline-block;
+	font-size: var(--fs-15);
+	font-weight: var(--fw-400);
+	padding: .5em;
+}
+
+.main__card--thank-you .card__sub--title {
+	color: var(--white);
+}
+
+.main__card--thank-you .card__body {
+	grid-gap: .7rem;
+}
+
+@media (min-width: 375px) {
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.card {
+		max-width: 360px;
+	}
+}
